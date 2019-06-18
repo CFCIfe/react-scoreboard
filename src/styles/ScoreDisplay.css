@@ -1,0 +1,52 @@
+.displayContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.team1 {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin: 0;
+}
+
+.team2 {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-content: flex-end;
+  margin: 0;
+}
+
+.point {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-content: flex-end;
+  margin: 0;
+}
+
+img {
+  border-radius: 8%;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+input {
+  align-self: center;
+  height: 3em;
+  width: 3em;
+  font-size: 25px;
+  margin: 0 10px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.vs {
+  align-self: center;
+  font-size: 20px;
+  font-weight: bolder;
+}

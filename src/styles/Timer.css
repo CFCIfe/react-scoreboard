@@ -1,0 +1,28 @@
+.timerContainer {
+  color: black;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.colored {
+  color: #4caf50;
+}
+
+.timerContainer h3,
+.timerContainer h4,
+.timerContainer h5,
+.timerContainer p {
+  margin: 10px auto;
+}
+
+div button {
+  border: none;
+  margin: 0 20px 20px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.timerContainer div button:hover {
+  background-color: #4caf50;
+  padding: 10px 10px;
+}
