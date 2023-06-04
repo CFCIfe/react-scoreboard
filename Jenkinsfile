@@ -29,7 +29,6 @@ pipeline{
             echo "deployed"
             '''
           }
-        }
       }
     }
   }
