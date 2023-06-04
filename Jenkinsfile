@@ -16,8 +16,8 @@ pipeline{
       steps {
         nodejs('node-latest') {
           sh '''
-          npm ci —ignore-warnings
-          npm install --save gh-pages —ignore-warnings
+          npm ci --ignore-warnings
+          npm install --save gh-pages --ignore-warnings
           '''
         }
       }
