@@ -16,7 +16,6 @@ pipeline{
       steps {
         nodejs('node-latest') {
           sh '''
-          npm install
           npm ci
           npm install --save gh-pages
           '''
