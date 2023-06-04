@@ -5,7 +5,9 @@ pipeline{
       steps {
         nodejs('Node-10.17') {
           sh '''
+          npm install
           npm install --save gh-pages
+          npm audit fix --force
           npm run build
           '''
         }
