@@ -16,8 +16,8 @@ pipeline{
       steps {
         nodejs('node-latest') {
           sh '''
-          npm ci
-          npm install --save gh-pages
+          npm ci --no-warnings
+          npm install --save gh-pages --no-warnings
           '''
         }
       }
@@ -26,7 +26,7 @@ pipeline{
       steps {
         nodejs('Node-10.17') {
           sh '''
-          gh-pages -b master -d build
+          npx gh-pages -b master -d build
           '''
         }
       }
