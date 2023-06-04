@@ -24,10 +24,12 @@ pipeline{
     }
     stage('deploy'){
       steps {
-        nodejs('Node-10.17') {
-          sh '''
-          npx gh-pages -b master -d build
-          '''
+        withCredentials([string(credentialsId: 'GitHub-PAT', variable: 'GITHUB_TOKEN')]){
+          nodejs('node-latest') {
+            sh '''
+            npx gh-pages -b master -d build -u $GITHUB_TOKEN
+            '''
+          }
         }
       }
     }
