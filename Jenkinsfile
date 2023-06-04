@@ -1,11 +1,22 @@
 pipeline{
   agent any
   stages {
-    stage('install'){
+    stage('build'){
       steps {
         nodejs('Node-10.17') {
-          sh 'npm -v'
-          sh 'yarn install'
+          sh '''
+          npm install --save gh-pages
+          npm run build
+          '''
+        }
+      }
+    }
+        stage('deploy'){
+      steps {
+        nodejs('Node-10.17') {
+          sh '''
+          gh-pages -b master -d build
+          '''
         }
       }
     }
