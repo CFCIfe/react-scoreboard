@@ -1,19 +1,29 @@
 pipeline{
   agent any
   stages {
-    stage('build'){
+    stage('cleaning'){
       steps {
-        nodejs('Node-10.17') {
+        nodejs('node-latest') {
           sh '''
-          npm install
-          npm install --save gh-pages
-          npm audit fix --force
-          npm run build
+          npm cache clean --force
+          npm update
+          rm -rf node_modules
           '''
         }
       }
     }
-        stage('deploy'){
+    stage('build'){
+      steps {
+        nodejs('node-latest') {
+          sh '''
+          npm install
+          npm ci
+          npm install --save gh-pages
+          '''
+        }
+      }
+    }
+    stage('deploy'){
       steps {
         nodejs('Node-10.17') {
           sh '''
